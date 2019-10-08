@@ -1,0 +1,11 @@
+{{> partials/body_header }}
+
+<h1>Bienvenue sur mon site !</h1>
+
+<form action="/add_product" method="post">
+    <input type="text" name="product_name">
+    <input type="text" name="product_price">
+    <input type="submit" value="Enregister le produit">
+</form>
+
+{{> partials/body_footer }}

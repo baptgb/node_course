@@ -1,0 +1,39 @@
+{{>partials/body_header}}
+
+<style>
+    table, tr, td {
+        border: 1px solid gray;
+        border-collapse: collapse;
+        min-width: 100px;
+        min-height: 50px;
+        padding: 5px;
+    }
+</style>
+
+<h1>Liste des produits enregistrés</h1>
+<table>
+    <thead>
+        <tr>
+            <td>Suppr.</td>
+            <td>Produit</td>
+            <td>Prix</td>
+            <td>Ajouté le</td>
+        </tr>
+    </thead>
+    <tbody>
+    {{#products}}
+        <tr>
+            <td>
+                <form action="/delete_product?product={{_id}}" method="post">
+                    <input type="submit" value="X" style="background-color: darkred; color: white;">
+                </form>
+            </td>
+            <td>{{name}}</td>
+            <td>{{price}} €</td>
+            <td>{{createdAt}}</td>
+        </tr>
+    {{/products}}
+    </tbody>
+</table>
+
+{{>partials/body_footer}}
